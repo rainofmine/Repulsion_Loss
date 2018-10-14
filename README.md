@@ -68,11 +68,11 @@ python train.py --csv_train <$path/train.txt> --csv_val <$path/val.txt> --csv_cl
 ## Visualization Result
 Baseline
 
-![img1](https://github.com/rainofmine/Repulsion_Loss/tree/master/img/1.png)
+![img1](https://github.com/rainofmine/Repulsion_Loss/blob/master/img/1.png)
 
 Add repulsion loss
 
-![img2](https://github.com/rainofmine/Repulsion_Loss/tree/master/img/2.png)
+![img2](https://github.com/rainofmine/Repulsion_Loss/blob/master/img/2.png)
 
 ## Reference
 
