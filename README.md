@@ -32,6 +32,13 @@ cd Repulsion_Loss/lib
 sh build.sh
 ```
 
+Create folders.
+
+```
+cd Repulsion_Loss
+mkdir ckpt mAP_txt summary weight
+```
+
 ## Datasets
 This repo is built for human detection. The popular annotations format for human detection（or pedestrian detection) includes bounding boxes of both human and ignore regions such as [Citypersons](https://arxiv.org/pdf/1702.05693.pdf) and [Crowdhuman](https://arxiv.org/pdf/1805.00123.pdf). We write them in CSV or TXT files.
 
