@@ -1,13 +1,13 @@
 # Repulsion_Loss
 
-Pytorch implementation of Repulsion Loss on RetinaNet. The baseline is followed by this [repo](https://github.com/yhenon/pytorch-retinanet). 
+Pytorch implementation of Repulsion Loss as described in [Repulsion Loss: Detecting Pedestrians in a Crowd](https://arxiv.org/abs/1711.07752). The baseline is RetinaNet followed by this [repo](https://github.com/yhenon/pytorch-retinanet). 
 
 ## Requirements
 
 - Python3
 - Pytorch0.4
 - torchvision
-- pandas
+- tensorboardX
 
 ## Installation
 
@@ -19,6 +19,10 @@ sudo apt-get install tk-dev python-tk
 pip install cffi
 
 pip install cython
+
+pip install pandas
+
+pip install tensorboardX
 ```
 
 Build NMS.
@@ -29,7 +33,7 @@ sh build.sh
 ```
 
 ## Datasets
-This repo is built for human detection. The popular annotations format for human detection（or pedestrian detection) includes bounding boxes of human and ignore regions such as [Citypersons](https://arxiv.org/pdf/1702.05693.pdf) and [Crowdhuman](https://arxiv.org/pdf/1805.00123.pdf). We write them in CSV or TXT files.
+This repo is built for human detection. The popular annotations format for human detection（or pedestrian detection) includes bounding boxes of both human and ignore regions such as [Citypersons](https://arxiv.org/pdf/1702.05693.pdf) and [Crowdhuman](https://arxiv.org/pdf/1805.00123.pdf). We write them in CSV or TXT files.
 
 ### Annotations format
 Three examples is as follows:
@@ -42,7 +46,7 @@ $image_path/img_2.jpg . . . . .
 
 Images with more than one bounding box should use one row per box. Labels that we often use are 'person' or 'ignore'. When a image do not contain any bounding box, we use ' ' separated with '.'. 
 
-### Label file
+### Label mapping file
 A TXT file is needed to map label to ID. Each line means one label name and its ID. One example is as follows:
 
 ```
