@@ -40,10 +40,10 @@ mkdir ckpt mAP_txt summary weight
 ```
 
 ## Datasets
-This repo is built for human detection. The popular annotations format for human detection（or pedestrian detection) includes bounding boxes of both human and ignore regions such as [Citypersons](https://arxiv.org/pdf/1702.05693.pdf) and [Crowdhuman](https://arxiv.org/pdf/1805.00123.pdf). We write them in CSV or TXT files.
+This repo is built for human detection. The popular annotation format for human detection（or pedestrian detection) includes bounding boxes of both human and ignore regions such as [Citypersons](https://arxiv.org/pdf/1702.05693.pdf) and [Crowdhuman](https://arxiv.org/pdf/1805.00123.pdf). You should write them in CSV or TXT files.
 
 ### Annotations format
-Three examples is as follows:
+Three examples are as follows:
 
 ```
 $image_path/img_1.jpg x1 y1 x2 y2 person
@@ -51,9 +51,9 @@ $image_path/img_1.jpg x1 y1 x2 y2 ignore
 $image_path/img_2.jpg . . . . .
 ```
 
-Images with more than one bounding box should use one row per box. Labels that we often use are 'person' or 'ignore'. When a image do not contain any bounding box, we use ' ' separated with '.'. 
+Images with more than one bounding box should use one row per box. Labels that we often use are 'person' or 'ignore'. When an image does not contain any bounding box, we use ' ' separated with '.'. 
 
-### Label mapping file
+### Label encoding file
 A TXT file is needed to map label to ID. Each line means one label name and its ID. One example is as follows:
 
 ```
