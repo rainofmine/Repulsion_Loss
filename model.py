@@ -8,11 +8,10 @@ import cv2
 import matplotlib.pyplot as plt
 import torch.utils.model_zoo as model_zoo
 from torch.nn import init
-from utils import BasicBlock, Bottleneck, BottleneckDeform, BBoxTransform, ClipBoxes
+from utils import BasicBlock, Bottleneck, BBoxTransform, ClipBoxes
 from anchors import Anchors
 import losses
 from lib.nms.pth_nms import pth_nms
-#from deformable.modules import ConvOffset2d
 from dataloader import UnNormalizer
 unnormalize = UnNormalizer()
 
@@ -285,14 +284,12 @@ class ResNet(nn.Module):
             return [nms_scores, nms_class, transformed_anchors[0, anchors_nms_idx, :]]
 
 
-def resnet18(num_classes, pretrained=False, **kwargs):
+def resnet18(num_classes, **kwargs):
     """Constructs a ResNet-18 model.
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
     """
     model = ResNet(num_classes, BasicBlock, [2, 2, 2, 2], **kwargs)
-    if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['resnet18'], model_dir='.'), strict=False)
     return model
 
 
