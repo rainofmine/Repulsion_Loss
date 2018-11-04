@@ -51,10 +51,10 @@ $image_path/img_1.jpg x1 y1 x2 y2 ignore
 $image_path/img_2.jpg . . . . .
 ```
 
-Images with more than one bounding box should use one row per box. Labels that we often use are 'person' or 'ignore'. When an image does not contain any bounding box, we use ' ' separated with '.'. 
+Images with more than one bounding box should use one row per box. Labels that we often use are 'person' or 'ignore'. When an image does not contain any bounding box, set them '.'. 
 
 ### Label encoding file
-A TXT file is needed to map label to ID. Each line means one label name and its ID. One example is as follows:
+A TXT file (classes.txt) is needed to map label to ID. Each line means one label name and its ID. One example is as follows:
 
 ```
 person 0
